@@ -1,0 +1,1 @@
+﻿Toggle button behavior is weird on mobile - also the way I tried to handle it doesn't make sense (mouseout)

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="https://yale:8172/MsDeploy.axd" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="signalr.dtsagile.com" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="True" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="True" profileName="Profile1" publishMethod="MSDeploy" replaceMatchingFiles="True" userName="ftc\mjuniper" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7jdd8CinEkaRSUW4Iz8eVQAAAAACAAAAAAADZgAAwAAAABAAAADh5PRlm43qbh8QZ62892PZAAAAAASAAACgAAAAEAAAAGJxXqiFsmaPthCDAvTQxeoYAAAAaarJ67FDo87XC0FUvVib4i3lKqZKbMB4FAAAAAUKMmco25AeLNw0zjVibCnURHAS" SelectedForPublish="True" />
+</publishData>

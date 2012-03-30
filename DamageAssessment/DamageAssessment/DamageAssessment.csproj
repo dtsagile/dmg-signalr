@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CDD604F6-C4DD-4686-AAE9-C0579F87AE9C}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DamageAssessment</RootNamespace>
+    <AssemblyName>DamageAssessment</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.2.5.2.830\lib\NET40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\packages\Autofac.2.5.2.830\lib\NET40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc3.2.5.2.830\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.4.1.10715.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.2.0.0.2000\lib\net40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR">
+      <HintPath>..\packages\SignalR.Server.0.3.3\lib\net40\SignalR.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Infrastructure\Logging\ILogger.cs" />
+    <Compile Include="Infrastructure\Logging\LogUtility.cs" />
+    <Compile Include="Infrastructure\Logging\NLogLogger.cs" />
+    <Compile Include="Infrastructure\Repositories\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\Repositories\DamageAssessmentContext.cs" />
+    <Compile Include="Models\DamageLocation.cs" />
+    <Compile Include="Infrastructure\Repositories\DamageLocationRepository.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Infrastructure\Repositories\LocationRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Hubs\RealTimeHub.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Public\css\android.css" />
+    <Content Include="Public\css\mobile.css" />
+    <Content Include="Public\css\site.chirp.css" />
+    <Content Include="Public\css\jquery.mobile-1.0b3.css" />
+    <Content Include="Public\css\leaflet.css" />
+    <Content Include="Public\css\reset.chirp.css" />
+    <Content Include="Public\css\reset.min.css">
+      <DependentUpon>reset.chirp.css</DependentUpon>
+    </Content>
+    <Content Include="Public\css\site.min.css">
+      <DependentUpon>site.chirp.css</DependentUpon>
+    </Content>
+    <Content Include="Public\css\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Public\css\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Public\css\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Public\css\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Public\css\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Public\css\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Public\css\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Public\css\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Public\css\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Public\css\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Public\css\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Public\css\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Public\css\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Public\css\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Public\css\themes\base\jquery.ui.all.css" />
+    <Content Include="Public\css\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Public\css\themes\base\jquery.ui.base.css" />
+    <Content Include="Public\css\themes\base\jquery.ui.button.css" />
+    <Content Include="Public\css\themes\base\jquery.ui.core.css" />
+    <Content Include="Public\css\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Public\css\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Public\css\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Public\css\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Public\css\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Public\css\themes\base\jquery.ui.slider.css" />
+    <Content Include="Public\css\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Public\css\themes\base\jquery.ui.theme.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Public\css\Site.old.css" />
+    <Content Include="Public\images\active-fire.png" />
+    <Content Include="Public\images\bridge-damage.png" />
+    <Content Include="Public\images\custom-marker-shadow.png" />
+    <Content Include="Public\images\damaged-building-mobile.png" />
+    <Content Include="Public\images\damaged-building.png" />
+    <Content Include="Public\images\deaths-mobile.png" />
+    <Content Include="Public\images\deaths.png" />
+    <Content Include="Public\images\destroyed-building-mobile.png" />
+    <Content Include="Public\images\destroyed-building.png" />
+    <Content Include="Public\images\fire-mobile.png" />
+    <Content Include="Public\images\fire.png" />
+    <Content Include="Public\images\gps-mobile.png" />
+    <Content Include="Public\images\injuries.png" />
+    <Content Include="Public\images\marker-shadow.png" />
+    <Content Include="Public\images\marker.png" />
+    <Content Include="Public\images\road-damage-mobile.png" />
+    <Content Include="Public\images\road-damage.png" />
+    <Content Include="Public\images\road-impassable-mobile.png" />
+    <Content Include="Public\images\road-impassable.png" />
+    <Content Include="Public\images\zoom-in.png" />
+    <Content Include="Public\images\zoom-out.png" />
+    <Content Include="Public\javascript\move.min.js" />
+    <Content Include="Public\javascript\damageassessment.debug.js">
+      <DependentUpon>scripts.chirp.config</DependentUpon>
+    </Content>
+    <Content Include="Public\javascript\damageassessment.min.js">
+      <DependentUpon>scripts.chirp.config</DependentUpon>
+    </Content>
+    <Content Include="Public\javascript\Map.Controller.js" />
+    <Content Include="Public\javascript\MicroEvent.js" />
+    <Content Include="Public\javascript\IoWrapper.js" />
+    <Content Include="Public\javascript\AgsDynamicLayer.js" />
+    <Content Include="Public\javascript\jquery.signalR.js" />
+    <Content Include="Public\javascript\jquery.signalR.min.js" />
+    <Content Include="Public\javascript\leaflet-0.3\images\layers.png" />
+    <Content Include="Public\javascript\leaflet-0.3\images\marker-shadow.png" />
+    <Content Include="Public\javascript\leaflet-0.3\images\marker.png" />
+    <Content Include="Public\javascript\leaflet-0.3\images\popup-close.png" />
+    <Content Include="Public\javascript\leaflet-0.3\images\zoom-in.png" />
+    <Content Include="Public\javascript\leaflet-0.3\images\zoom-out.png" />
+    <Content Include="Public\javascript\leaflet-0.3\leaflet.css" />
+    <Content Include="Public\javascript\leaflet-0.3\leaflet.ie.css" />
+    <Content Include="Public\javascript\leaflet-0.3\leaflet.js" />
+    <Content Include="Public\javascript\leaflet.js" />
+    <Content Include="Public\javascript\Map.Mobile.Controller.js" />
+    <Content Include="Public\javascript\modernizr-1.7.js" />
+    <Content Include="Public\javascript\modernizr-1.7.min.js" />
+    <Content Include="NLog.config" />
+    <Content Include="Public\javascript\scripts.chirp.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Map.Mobile.cshtml" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49207</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/da</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost/da</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

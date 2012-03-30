@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Real-Time Damage Hazard Console</title>
+        
+        <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet" type="text/css">
+        @*<link rel="stylesheet" href="http://leaflet.cloudmade.com/dist/leaflet.css" type="text/css" media="screen" title="no title" charset="utf-8">*@
+        @Html.CSS("site.min.css")       
+    </head>
+    <body>
+        <header>
+			<div id="titles">
+				<h1>Real-Time Hazards Console</h1>
+				<h4 id="subtitle" class="clear">NodeJs + Socket.io<span id="userCount">Current Users: 1</span></h4>
+			</div>
+			<div id="tools">
+				<ul id="drawing">                
+					<li data-type="fire">@Html.Image("fire.png")</li>
+					<li data-type="deaths">@Html.Image("deaths.png")</li>
+					<li data-type="road-damage">@Html.Image("road-damage.png")</li>
+					<li data-type="road-impassable">@Html.Image("road-impassable.png")</li>
+					<li data-type="damaged-building">@Html.Image("damaged-building.png")</li>
+					<li data-type="destroyed-building">@Html.Image("destroyed-building.png")</li>
+				</ul>
+				<h4 id="message"></h4>
+			</div>
+			<div class="clear">
+			</div>
+		</header>
+		<div id="map"></div>
+		<section>
+			<div class="controls">
+				<a id="toggle-drive" href="#" class="button">Drive Map</a>
+			</div>
+		</section>     
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        @Html.Script("jquery.signalR.min.js")
+        <script src="@Url.Content("~/signalr/hubs")" type="text/javascript"></script>      
+        
+        @Html.Script("leaflet-0.3/leaflet.js")
+        @Html.Script("microevent.js")
+        @Html.Script("iowrapper.js")
+        @Html.Script("map.controller.js")
+         
+        @*@Html.Script("damageassessment.debug.js", "damageassessment.min.js")*@
+
+
+        <script type="text/javascript">
+            $(function () {
+                Map.Controller.init({
+                    imageBaseUrl: '@Url.Content("~/public/images/")'
+                });
+            });  	      
+	    </script> 
+    </body>
+</html>

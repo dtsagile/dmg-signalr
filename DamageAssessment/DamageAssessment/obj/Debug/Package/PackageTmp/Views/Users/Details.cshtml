@@ -1,0 +1,26 @@
+@model DamageAssessment.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>User</legend>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">@Model.Email</div>
+
+    <div class="display-label">Locations</div>
+    <div class="display-field">@(Model.Locations == null ? "None" : Model.Locations.Count.ToString())</div>
+
+    <div class="display-label">DamageLocations</div>
+    <div class="display-field">@(Model.DamageLocations == null ? "None" : Model.DamageLocations.Count.ToString())</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

@@ -1,0 +1,5 @@
+﻿publish to signalr.dtsagile.com
+make sure iphone one works
+user count update?
+
+http://www.hanselman.com/blog/AsynchronousScalableWebApplicationsWithRealtimePersistentLongrunningConnectionsWithSignalR.aspx

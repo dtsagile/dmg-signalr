@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DamageAssessmentContext-Web.config Connection String" description="DamageAssessmentContext Connection String used in web.config by the application to access the database." defaultvalue="Data Source=.\SQLEXPRESS;Initial Catalog=DamageAssessment;Integrated Security=SSPI;MultipleActiveResultSets=True;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\SVN\\damageassessment\\DamageAssessment\\DamageAssessment\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DamageAssessmentContext']/@connectionString" />
+  </parameter>
+</parameters>
